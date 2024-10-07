@@ -8,14 +8,6 @@ import {
   sepolia,
 } from 'wagmi/chains';
 
-import { connectorsForWallets } from '@rainbow-me/rainbowkit';
-import {
-  rainbowWallet,
-  metaMaskWallet,
-  coinbaseWallet,
-  walletConnectWallet,
-} from '@rainbow-me/rainbowkit/wallets';
-
 export const config = getDefaultConfig({
   appName: 'RainbowKit App',
   projectId: 'YOUR_PROJECT_ID',
@@ -30,17 +22,3 @@ export const config = getDefaultConfig({
   ssr: true,
   
 });
-
-const connectors = connectorsForWallets(
-  [
-    {
-      groupName: 'Recommended',
-      wallets: [rainbowWallet, metaMaskWallet],
-    },
-    {
-      groupName: 'Others',
-      wallets: [coinbaseWallet, walletConnectWallet],
-    },
-  ],
-  { appName: 'RainbowKit App', projectId: 'YOUR_PROJECT_ID' },
-);
